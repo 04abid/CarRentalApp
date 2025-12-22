@@ -1,0 +1,158 @@
+
+{
+  "categories": [
+    {
+      "title": "Standard",
+      "coverImage": "toyota",
+      "cars": [
+        {
+          "brand": "Toyota",
+          "model": "Corolla",
+          "pricePerMonth": "$450",
+          "engine": "1.6L",
+          "image": "toyota",
+          "type": "Sedan",
+          "year": "2020"
+        },
+        {
+          "brand": "Hyundai",
+          "model": "Elantra",
+          "pricePerMonth": "$470",
+          "engine": "1.6L",
+          "image": "toyota",
+          "type": "Sedan",
+          "year": "2021"
+        },
+        {
+          "brand": "Kia",
+          "model": "Cerato",
+          "pricePerMonth": "$460",
+          "engine": "1.6L",
+          "image": "toyota",
+          "type": "Sedan",
+          "year": "2020"
+        },
+        {
+          "brand": "Nissan",
+          "model": "Sunny",
+          "pricePerMonth": "$430",
+          "engine": "1.5L",
+          "image": "toyota",
+          "type": "Sedan",
+          "year": "2019"
+        },
+        {
+          "brand": "Chevrolet",
+          "model": "Cobalt",
+          "pricePerMonth": "$420",
+          "engine": "1.5L",
+          "image": "toyota",
+          "type": "Sedan",
+          "year": "2019"
+        }
+      ]
+    },
+    {
+      "title": "Luxury",
+      "coverImage": "mercedes",
+      "cars": [
+        {
+          "brand": "BMW",
+          "model": "X5",
+          "pricePerMonth": "$1200",
+          "engine": "3.0L",
+          "image": "mercedes",
+          "type": "SUV",
+          "year": "2022"
+        },
+        {
+          "brand": "Mercedes",
+          "model": "E-Class",
+          "pricePerMonth": "$1100",
+          "engine": "2.0L",
+          "image": "mercedes",
+          "type": "Sedan",
+          "year": "2021"
+        },
+        {
+          "brand": "Audi",
+          "model": "A6",
+          "pricePerMonth": "$1150",
+          "engine": "2.0L",
+          "image": "mercedes",
+          "type": "Sedan",
+          "year": "2022"
+        },
+        {
+          "brand": "Lexus",
+          "model": "RX 350",
+          "pricePerMonth": "$1180",
+          "engine": "3.5L",
+          "image": "mercedes",
+          "type": "SUV",
+          "year": "2021"
+        },
+        {
+          "brand": "Porsche",
+          "model": "Cayenne",
+          "pricePerMonth": "$1500",
+          "engine": "3.0L",
+          "image": "mercedes",
+          "type": "SUV",
+          "year": "2022"
+        }
+      ]
+    },
+    {
+      "title": "SUV",
+      "coverImage": "jeep",
+      "cars": [
+        {
+          "brand": "Toyota",
+          "model": "RAV4",
+          "pricePerMonth": "$750",
+          "engine": "2.0L",
+          "image": "jeep",
+          "type": "SUV",
+          "year": "2021"
+        },
+        {
+          "brand": "Hyundai",
+          "model": "Tucson",
+          "pricePerMonth": "$720",
+          "engine": "2.0L",
+          "image": "jeep",
+          "type": "SUV",
+          "year": "2021"
+        },
+        {
+          "brand": "Kia",
+          "model": "Sportage",
+          "pricePerMonth": "$730",
+          "engine": "2.0L",
+          "image": "jeep",
+          "type": "SUV",
+          "year": "2020"
+        },
+        {
+          "brand": "Nissan",
+          "model": "X-Trail",
+          "pricePerMonth": "$760",
+          "engine": "2.5L",
+          "image": "jeep",
+          "type": "SUV",
+          "year": "2021"
+        },
+        {
+          "brand": "Mazda",
+          "model": "CX-5",
+          "pricePerMonth": "$780",
+          "engine": "2.5L",
+          "image": "jeep",
+          "type": "SUV",
+          "year": "2022"
+        }
+      ]
+    }
+  ]
+}
