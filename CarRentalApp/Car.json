@@ -1,0 +1,128 @@
+
+{
+    "cars": [
+        {
+            "carType": "standard",
+            "carInfo": {
+                "carModel": "Toyota Corolla",
+                "carRentPrice": "40",
+                "carEngine": "1.6L"
+            }
+        },
+        {
+            "carType": "standard",
+            "carInfo": {
+                "carModel": "Hyundai Elantra",
+                "carRentPrice": "42",
+                "carEngine": "1.8L"
+            }
+        },
+        {
+            "carType": "standard",
+            "carInfo": {
+                "carModel": "Honda Civic",
+                "carRentPrice": "45",
+                "carEngine": "2.0L"
+            }
+        },
+        {
+            "carType": "standard",
+            "carInfo": {
+                "carModel": "Kia Cerato",
+                "carRentPrice": "38",
+                "carEngine": "1.6L"
+            }
+        },
+        {
+            "carType": "standard",
+            "carInfo": {
+                "carModel": "Nissan Sentra",
+                "carRentPrice": "41",
+                "carEngine": "1.6L"
+            }
+        },
+        {
+            "carType": "suv",
+            "carInfo": {
+                "carModel": "Toyota RAV4",
+                "carRentPrice": "70",
+                "carEngine": "2.5L"
+            }
+        },
+        {
+            "carType": "suv",
+            "carInfo": {
+                "carModel": "Honda CR-V",
+                "carRentPrice": "75",
+                "carEngine": "2.4L"
+            }
+        },
+        {
+            "carType": "suv",
+            "carInfo": {
+                "carModel": "Mazda CX-5",
+                "carRentPrice": "72",
+                "carEngine": "2.5L"
+            }
+        },
+        {
+            "carType": "suv",
+            "carInfo": {
+                "carModel": "Hyundai Tucson",
+                "carRentPrice": "68",
+                "carEngine": "2.0L"
+            }
+        },
+        {
+            "carType": "suv",
+            "carInfo": {
+                "carModel": "Kia Sportage",
+                "carRentPrice": "69",
+                "carEngine": "2.0L"
+            }
+        },
+        
+        {
+            "carType": "luxury",
+            "carInfo": {
+                "carModel": "BMW 5 Series",
+                "carRentPrice": "120",
+                "carEngine": "3.0L"
+            }
+        },
+        {
+            "carType": "luxury",
+            "carInfo": {
+                "carModel": "Mercedes E-Class",
+                "carRentPrice": "130",
+                "carEngine": "3.0L"
+            }
+        },
+        {
+            "carType": "luxury",
+            "carInfo": {
+                "carModel": "Audi A6",
+                "carRentPrice": "125",
+                "carEngine": "2.8L"
+            }
+        },
+        {
+            "carType": "luxury",
+            "carInfo": {
+                "carModel": "Lexus ES",
+                "carRentPrice": "115",
+                "carEngine": "2.5L"
+            }
+        },
+        {
+            "carType": "luxury",
+            "carInfo": {
+                "carModel": "Genesis G80",
+                "carRentPrice": "128",
+                "carEngine": "3.5L"
+            }
+        }
+        ```
+        
+    ]
+}
