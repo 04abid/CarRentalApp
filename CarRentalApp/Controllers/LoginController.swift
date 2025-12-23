@@ -33,5 +33,4 @@ class LoginController: UIViewController {
             scenedelegate?.window?.makeKeyAndVisible()
         }
     }
-    
 }

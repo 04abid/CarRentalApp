@@ -8,11 +8,15 @@
 import UIKit
 
 class HomeController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!
-    
-    var carmenu: CarManager?
-    var selectedCar: CarCategory?
+    var allCars: [Car] {
+        CarDataManager.shared.allCars
+    }
+    var filteredCars: [Car] = []
+    var isSearching: Bool = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +25,23 @@ class HomeController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.register(UINib(nibName: "CarCell", bundle: nil), forCellWithReuseIdentifier: "CarCell")
         collection.register(UINib(nibName: "selectedCarCell", bundle: nil), forCellWithReuseIdentifier: "selectedCarCell")
         CarDataManager.shared.getCarList()
+        filteredCars = allCars
+        searchTextField.addTarget(self, action: #selector(searchclikced), for: .editingChanged)
     }
+    
+    @objc func searchclikced() {
+        if let text = searchTextField.text?.lowercased(),!text.isEmpty{
+            filteredCars = allCars.filter({car in
+                car.brand.lowercased().contains(text) || car.model.lowercased().contains(text)
+            })
+            isSearching = true
+        } else {
+            filteredCars = []
+            isSearching = false
+        }
+        collection.reloadSections(IndexSet(integer: 1))
+    }
+    
     
     override func viewDidLayoutSubviews() {
         searchTextField.layer.cornerRadius = searchTextField.frame.height / 2
@@ -41,7 +61,9 @@ extension HomeController {
         if section == 0 {
             CarDataManager.shared.carmenu?.categories.count ?? 0
         } else {
-            CarDataManager.shared.selectedCar?.cars.count ?? 0
+//            CarDataManager.shared.selectedCar?.cars.count ?? 0
+//            filteredCars.count
+            isSearching ? filteredCars.count : CarDataManager.shared.selectedCar?.cars.count ?? 0
         }
     }
     
@@ -54,7 +76,9 @@ extension HomeController {
                return cell
            } else {
                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedCarCell", for: indexPath) as! selectedCarCell
-               guard let car =  CarDataManager.shared.selectedCar?.cars[indexPath.item] else { return cell }
+//               guard let car =  CarDataManager.shared.selectedCar?.cars[indexPath.item] else { return cell }
+//               let filter = filteredCars[indexPath.item]
+               guard let car = isSearching ? filteredCars[indexPath.item] : CarDataManager.shared.selectedCar?.cars[indexPath.item] else {return cell}
                cell.configure(car: car)
                return cell
            }
@@ -63,8 +87,11 @@ extension HomeController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            selectedCar = CarDataManager.shared.carmenu?.categories[indexPath.item]
+            CarDataManager.shared.selectedCar = CarDataManager.shared.carmenu?.categories[indexPath.item]
+            filteredCars = []
+            isSearching = false
             collectionView.reloadSections(IndexSet(integer: 1))
+            print("Selected:", CarDataManager.shared.selectedCar?.title ?? "salam")
         }
     }
     }

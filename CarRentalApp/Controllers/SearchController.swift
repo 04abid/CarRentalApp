@@ -15,22 +15,39 @@ class SearchController: UIViewController,UICollectionViewDelegate,UICollectionVi
     var allCars: [Car] {
         CarDataManager.shared.carmenu?.categories .flatMap({$0.cars}) ?? []
     }
+    var filteredCars: [Car] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Search"
         collection.delegate = self
         collection.dataSource = self
         collection.register(UINib(nibName: "SearchCell", bundle: nil), forCellWithReuseIdentifier: "SearchCell")
+        filteredCars = allCars
+        searchTextField.addTarget(self, action: #selector(searchTextChanged), for: .editingChanged)
+}
+    
+    @objc func searchTextChanged() {
+        if let text = searchTextField.text?.lowercased() {
+            if text.isEmpty {
+                filteredCars = allCars
+            } else {
+              filteredCars = allCars.filter({ car in
+                  car.brand.lowercased().contains(text) ||
+                  car.model.lowercased().contains(text)
+                })
+            }
+        }
+        collection.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        allCars.count
+        filteredCars.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCell
-        let car = allCars[indexPath.item]
-        cell.configure(car: car)
+//        let car = allCars[indexPath.item]
+        let filteredCar = filteredCars[indexPath.item]
+        cell.configure(car: filteredCar)
         return cell
     }
 }
