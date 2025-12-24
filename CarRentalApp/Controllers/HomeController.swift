@@ -11,13 +11,13 @@ class HomeController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!
+    
     var allCars: [Car] {
         CarDataManager.shared.allCars
     }
     var filteredCars: [Car] = []
     var isSearching: Bool = false
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collection.delegate = self
@@ -48,8 +48,6 @@ class HomeController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchTextField.clipsToBounds = true
     }
 }
-
-
 
 extension HomeController {
     
@@ -98,8 +96,6 @@ extension HomeController {
 
 
 extension HomeController {
-    
-    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -109,7 +105,6 @@ extension HomeController {
             return CGSize(width: /*collectionView.frame.width*/ 350, height: 355)
         }
     }
-    
         func collectionView(_ collectionView: UICollectionView,
                             layout collectionViewLayout: UICollectionViewLayout,
                             minimumLineSpacingForSectionAt section: Int) -> CGFloat {
